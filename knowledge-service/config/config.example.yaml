@@ -1,0 +1,37 @@
+# 知识服务独立配置模板（无真实密钥）。
+# 复制为 knowledge-service/config/config.yaml 后填写本机真实值；
+# config.yaml 已被 .gitignore 排除，禁止提交。
+#
+# 所有路径必须指向 V2 管理的位置，禁止引用旧项目目录。
+
+project_root: C:/replace/with/runtime-root          # 知识服务 runtime 根目录（V2 管理）
+source_root: C:/replace/with/knowledge-original    # 可选：机构职责标题恢复用原文（V2 assets 副本）
+qdrant_path: C:/replace/with/qdrant/storage         # Qdrant storage（新实例使用）
+qdrant_url: http://127.0.0.1:6333
+lexical_db: C:/replace/with/indexes/lexical_v2.sqlite3
+manifest_db: C:/replace/with/indexes/manifest.sqlite3
+model_cache: C:/replace/with/models
+log_dir: C:/replace/with/logs
+dense_model: BAAI/bge-m3
+reranker_model: BAAI/bge-reranker-v2-m3
+collection: hotline_dispatch_v2
+api_key: CHANGE_ME
+host: 127.0.0.1
+port: 8088
+index_batch_size: 8
+embed_batch_size: 4
+default_top_k: 8
+candidate_k: 12
+enable_reranker: false
+include_categories:
+  - 01_机构职责
+  - 02_权责清单
+  - 03_历史工单案例
+  - 04_国家法律法规
+  - 05_广州地方性法规
+  - 06_广州政府规章
+  - 07_广州行政规范性文件
+
+# 独立后的知识服务不依赖 V1 MySQL 开发库；检索链路不需要 MySQL。
+mysql:
+  enabled: false

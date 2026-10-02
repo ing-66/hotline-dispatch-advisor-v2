@@ -1,0 +1,22 @@
+.env
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+node_modules/
+.next/
+coverage/
+htmlcov/
+*.db
+*.sqlite3
+*.egg-info/
+*.tsbuildinfo
+knowledge-service/config/config.yaml
+knowledge-service/.venv/
+.pnpm-store/
+
+# Operational knowledge and historical work orders are local-only. They can
+# contain addresses or other personal/business data and are never published.
+assets/*
+!assets/README.md
